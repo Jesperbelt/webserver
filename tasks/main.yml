@@ -1,0 +1,16 @@
+#### webserver main task  ####
+---
+  - name: Update all packages to their latest version
+    ansible.builtin.apt:
+      name: "*"
+      state: latest
+  - name: Install php
+    apt:
+      name: php
+      update_cache: yes
+  - name: Install apache2
+    apt:
+      name: apache2
+  - name: Install php-mysql
+    apt:
+      name: php-mysql
